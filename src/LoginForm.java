@@ -105,10 +105,6 @@ public class LoginForm extends JPanel {
     add(centerAlignFieldsBox);
     add(errorLabel);
   }
-    // add(sexField);
-    //add(box,BorderLayout.CENTER);
-    //add(imnameTextField, BorderLayout.CENTER);
-
     final boolean validateFields() {
         String name = nameTextField.getFieldValue();
         String age = ageTextField.getFieldValue();
