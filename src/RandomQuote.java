@@ -61,7 +61,6 @@ public class RandomQuote {
             ResultSet Respred = statement.executeQuery("SELECT * FROM prediction ORDER BY RANDOM() LIMIT 1");
             Respred.next();
             PredRes=Respred.getString("pred");
-            // result.getString("quote");
             String quote = "<html><center>Dear " + name + ",<br><br>Baba Java predicts that "
                     + PredRes + ".As Baba is aware of the fact that you are a " + age + " year old "
                     + gender + ", he advices you to " +QuoteRes + "</center></html>";
@@ -73,9 +72,8 @@ public class RandomQuote {
             quoteLabel = new StyledLabel(quote);
             // Create and add the image label to the panel
             imageLabel = new JLabel(imageIcon);
-            // imageLabel.setPreferredSize(new Dimension(200, 200));
-            imageLabel.setIcon(new ImageIcon(new ImageIcon("src/images/" + imageUrlId + ".png").getImage()
-                    .getScaledInstance(200, 250, Image.SCALE_SMOOTH)));
+    
+            imageLabel.setIcon(new ImageIcon(new ImageIcon("src/images/" + imageUrlId + ".png").getImage().getScaledInstance(200, 250, Image.SCALE_SMOOTH)));
             Box vbox = Box.createVerticalBox();
             vbox.add(Box.createVerticalGlue());
             vbox.add(HCenter(qLabel));
