@@ -43,6 +43,40 @@ public class LoginForm extends JPanel {
     nameTextField = new MyTextField("Name    ");
     ageTextField = new MyTextField("Age       ");
     genderTextField = new MyTextField("Gender   ");
+    nameTextField.field.addFocusListener(new FocusListener() {
+      @Override
+      public void focusGained(FocusEvent e) {
+        nameTextField.field.setBorder(new LineBorder(Color.ORANGE,2));
+      }
+      @Override
+      public void focusLost(FocusEvent e) {
+        nameTextField.field.setBorder(null);
+      }
+    });
+    ageTextField.field.addFocusListener(new FocusListener(){
+      public void focusGained(FocusEvent e) {
+        ageTextField.field.setBorder(new LineBorder(Color.ORANGE,2));
+  
+      }
+      @Override
+      public void focusLost(FocusEvent e) {
+        ageTextField.field.setBorder(null);
+      }
+  
+    });
+    genderTextField.field.addFocusListener(new FocusListener(){
+      public void focusGained(FocusEvent e) {
+        genderTextField.field.setBorder(new LineBorder(Color.ORANGE,2));
+  
+        
+      }
+      @Override
+      public void focusLost(FocusEvent e) {
+        genderTextField.field.setBorder(null);
+      }
+  
+    });
+    
     errorLabel = new JLabel("");
     errorLabel.setFont(new Font("Arial", Font.PLAIN, 13));
     errorLabel.setForeground(Color.red);
@@ -74,8 +108,6 @@ public class LoginForm extends JPanel {
 
     JLabel imageLabel = new JLabel();
     imageLabel.setIcon(new ImageIcon(ClassLoader.getSystemResource("images/z.png")));
-    //imnameTextField.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    //imnameTextField.setPreferredSize(new Dimension(100,100));
     Box imagebox=Box.createHorizontalBox();
     imagebox.add(Box.createHorizontalGlue());
     imagebox.add(imageLabel);
