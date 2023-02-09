@@ -67,11 +67,6 @@ public class RandomQuote {
                     + gender + ", he advices you to " +QuoteRes + "</center></html>";
             final int maxImageCount = 10;
             int imageUrlId = new Random().nextInt(maxImageCount) + 1;
-
-            // Fetch the corresponding image from the database
-            // InputStream inputStream = result.getBinaryStream("images");
-            // Image image = ImageIO.read(inputStream);
-            qLabel=new StyledLabel(q);
             ImageIcon imageIcon = new ImageIcon("src/images/" + imageUrlId + ".png");
 
             // Create and add the quote label to the panel
@@ -147,17 +142,6 @@ public class RandomQuote {
             vbox.add(Box.createVerticalGlue());
             panel.add(vbox, BorderLayout.CENTER);
 
-            // Create and add the refresh button to the panel
-            /*
-             * JButton refreshButton = new JButton("Refresh");
-             * refreshButton.setPreferredSize(new Dimension(100, 50));
-             * refreshButton.addActionListener(new ActionListener() {
-             * public void actionPerformed(ActionEvent e) {
-             * frame.dispose();
-             * new RandomQuote();
-             * }
-             * });
-             */
 
             // Add the panel to the frame and set the default close operation
             frame.setLayout(new BorderLayout());
